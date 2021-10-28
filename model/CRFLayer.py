@@ -54,7 +54,6 @@ class CRFLayer(tf.keras.layers.Layer):
         self.bilateral_weights = bilateral_compat * _diagonal_compatibility((num_classes, num_classes))
         self.compatibility_matrix = _potts_compatibility((num_classes, num_classes))
 
-    @tf.function
     def call(self, unary, image):
         """
         The order of parameters: I, p
