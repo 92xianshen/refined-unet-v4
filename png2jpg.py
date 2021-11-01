@@ -3,8 +3,12 @@
 import os
 from PIL import Image
 
-save_path = 'qualitative_evaluation/'
-for root, dirs, files in os.walk('r=140, eps=1e-4/'):
+task = 'a=140, b=.0625, r=3'
+
+result_path = os.path.join('../result/', task)
+save_path = os.path.join('../qualitative_evaluation/', task)
+
+for root, dirs, files in os.walk(result_path):
     print('root:', root)
     if not os.path.exists(os.path.join(save_path, root)):
         os.makedirs(os.path.join(save_path, root))

@@ -4,7 +4,7 @@ from cv2 import cv2
 import matplotlib.pyplot as plt
 from PIL import Image
 
-task = '../result/a=80, b=0.0625, r=3/'
+task = '../result/a=140, b=.0625, r=3/'
 
 
 CROP_HEIGHT = 512

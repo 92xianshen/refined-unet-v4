@@ -9,7 +9,7 @@ import tensorflow as tf
 
 from create_model import create_refined_unet_v4
 
-theta_alpha, theta_beta, theta_gamma = 80, .25, 3
+theta_alpha, theta_beta, theta_gamma = 140, .0625, 3
 
 CROP_HEIGHT, CROP_WIDTH = 512, 512
 num_bands = 7

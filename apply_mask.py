@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 
-task_name = '../result/a=80, b=0.25, r=3/'
+task_name = '../result/a=100, b=.25, r=3/'
 
 """ Apply the given mask to the image. """
 
