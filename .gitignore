@@ -139,3 +139,10 @@ cython_debug
 
 # My pretrained model
 pretrained
+
+# TF checkpoint
+checkpoint
+
+# images
+*.png
+*.jpg
