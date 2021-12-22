@@ -31,8 +31,18 @@ from model.CRFLayer import CRFLayer
 from model.UNet import UNet
 
 
-def create_refined_unet_v4(input_channels, num_classes, theta_alpha=80, theta_beta=.0625, theta_gamma=3.0, spatial_compat=3.0, bilateral_compat=10.0, num_iterations=10, gt_prob=0.7, unet_pretrained=None):
-    """ Create Refined UNet v2 """
+def create_refined_unet_v4(
+    input_channels, 
+    num_classes, 
+    theta_alpha=80, 
+    theta_beta=.0625, 
+    theta_gamma=3.0, 
+    spatial_compat=3.0, 
+    bilateral_compat=10.0, 
+    num_iterations=10, 
+    gt_prob=0.7, 
+    unet_pretrained=None):
+    """ Create Refined UNet v4 """
 
     # Input
     inputs = tf.keras.Input(

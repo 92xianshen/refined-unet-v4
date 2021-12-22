@@ -3,7 +3,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 
-task_name = '../result/a=100, b=.25, r=3/'
+input_path = '../ablation_study/result/'
+output_path = '../ablation_study/masked/'
+image_path = '../datasets/false_colorized/'
+
+# create output folder
+if not os.path.exists(output_path):
+    os.makedirs(output_path)
 
 """ Apply the given mask to the image. """
 
@@ -13,15 +19,14 @@ def apply_mask(image, mask, mask_value, color, alpha=.5):
 
     return image
 
-image_path = '../datasets/false_colorized/'
 
-for f in os.listdir(task_name):
+for f in os.listdir(input_path):
     if os.path.splitext(f)[-1] == '.npz':
         print(f)
         
-        mask_name = os.path.join(task_name, f)
+        mask_name = os.path.join(input_path, f)
         image_name = os.path.join(image_path, f.replace('rfn.npz', 'sr_bands.png'))
-        save_name = os.path.join(task_name, f.replace('rfn.npz', 'sr_bands_masked.png'))
+        save_name = os.path.join(output_path, f.replace('rfn.npz', 'sr_bands_masked.png'))
 
         image = np.array(Image.open(image_name), dtype=np.float32)
         mask = np.load(mask_name)['arr_0']

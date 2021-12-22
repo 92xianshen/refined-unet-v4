@@ -4,8 +4,12 @@ from cv2 import cv2
 import matplotlib.pyplot as plt
 from PIL import Image
 
-task = '../result/a=140, b=.0625, r=3/'
+# task = '../result/a=140, b=.0625, r=3/'
+input_path = '../ablation_study/masked/'
+output_path = '../ablation_study/masked_patch/'
 
+if not os.path.exists(output_path):
+    os.makedirs(output_path)
 
 CROP_HEIGHT = 512
 CROP_WIDTH = 512
@@ -31,15 +35,15 @@ def extract_patches(image, crop_height=CROP_HEIGHT, crop_width=CROP_WIDTH):
 
     return images, num_height, num_width
 
-fnames = os.listdir(task)
+fnames = os.listdir(input_path)
 
 for fname in fnames:
     if 'masked' in fname:
-        rfn_im = Image.open(os.path.join(task, fname))
+        rfn_im = Image.open(os.path.join(input_path, fname))
         # false_im = Image.open(fname.replace('mask.npz', 'false_color.png'))
         rfn = np.array(rfn_im)
         # false = np.array(false_im)
-        save_path = os.path.join(task, fname.replace('.png', ''))
+        save_path = os.path.join(output_path, fname.replace('.png', ''))
 
         if not os.path.exists(save_path):
             os.makedirs(save_path)
